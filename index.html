@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>IMDb Style Page</title>
+  <link rel="stylesheet" href="part1.css" />
+   <link rel="stylesheet" href="part2.css" />
+   <link rel="stylesheet" href="part3.css" />
+   <link rel="stylesheet" href="part4.css" />
+   <link rel="stylesheet" href="part5.css" />
+   <link rel="stylesheet" href="part6.css" />
+   <link rel="stylesheet" href="part7.css" />
+    <link rel="stylesheet" href="part8.css" />
+</head>
+<body>
+  <div class="top-bar">
+  <div class="menu-icon" id="menu-toggle">☰</div>
+
+  <div class="search-bar">
+ <input type="text" placeholder="Search IMDb..." id="search-input">
+<button id="search-btn">Search</button>
+
+  </div>
+
+  <div class="nav-right">
+    <a href="#" id="imdbpro-link">IMDbPro</a>
+    <a href="#" id="watchlist-link">Watchlist</a>
+    <a href="#" id="sign-in-link">Sign In</a>
+  </div>
+</div>
+
+<!-- Left Slide Menu Box -->
+<div class="menu-box" id="menu-box">
+  <div class="menu-section">
+    <h3>🎬 Movies</h3>
+    <a href="#">Release Calendar</a>
+    <a href="#">Top 250 Movies</a>
+    <a href="#">Most Popular Movies</a>
+    <a href="#">Browse Movies by Genre</a>
+    <a href="#">Top Box Office</a>
+    <a href="#">Showtimes & Tickets</a>
+    <a href="#">Movie News</a>
+    <a href="#">India Movie Spotlight</a>
+  </div>
+
+  <div class="menu-section">
+    <h3>📺 TV Shows</h3>
+    <a href="#">What's on TV</a>
+    <a href="#">Top 250 TV Shows</a>
+    <a href="#">Most Popular TV Shows</a>
+    <a href="#">Browse by Genre</a>
+    <a href="#">TV News</a>
+  </div>
+
+  <div class="menu-section">
+    <h3>⭐ Awards & Events</h3>
+    <a href="#">Oscars</a>
+    <a href="#">Cannes</a>
+    <a href="#">STARmeter</a>
+    <a href="#">All Events</a>
+  </div>
+</div>
+
+<!-- IMDbPro Box -->
+<div class="hide-box" id="imdbpro-box">
+  <h3>IMDbPro</h3>
+  <button class="btn amazon-btn" onclick="openSite('https://www.amazon.com')">Join with Amazon</button>
+  <button class="btn amazon-btn" onclick="openSite('https://www.amazon.com')">Log in with Amazon</button>
+  <button class="btn imdb-btn" onclick="openSite('https://www.imdb.com')">Log in with IMDb</button>
+</div>
+
+<!-- Watchlist Box -->
+<div class="hide-box" id="watchlist-box">
+  <h3>Watchlist</h3>
+  <button class="btn imdb-btn" onclick="openSite('https://www.imdb.com')">Sign in with IMDb</button>
+  <button class="btn amazon-btn" onclick="openSite('https://www.amazon.com')">Sign in with Amazon</button>
+  <button class="btn google-btn" onclick="openSite('https://accounts.google.com')">Sign in with Google</button>
+  <button class="btn apple-btn" onclick="openSite('https://appleid.apple.com')">Sign in with Apple</button>
+</div>
+
+<!-- Sign In Box -->
+<div class="hide-box" id="sign-in-box">
+  <h3>Sign In</h3>
+  <button class="btn imdb-btn" onclick="openSite('https://www.imdb.com')">Sign in with IMDb</button>
+  <button class="btn amazon-btn" onclick="openSite('https://www.amazon.com')">Sign in with Amazon</button>
+  <button class="btn google-btn" onclick="openSite('https://accounts.google.com')">Sign in with Google</button>
+  <button class="btn apple-btn" onclick="openSite('https://appleid.apple.com')">Sign in with Apple</button>
+  <button class="btn create-btn" id="create-account-btn" style="background:#444;">Create Account</button>
+</div>
+
+<!-- Create Account Form -->
+<div class="hide-box" id="create-account-form">
+  <button onclick="createAccount()">Create Account</button>
+  <p id="message"></p>
+  <h3>Create Account</h3>
+  <form onsubmit="alert('Form submitted!'); return false;">
+    <input type="text" placeholder="Full Name" required />
+    <input type="tel" placeholder="Phone Number" required />
+    <input type="email" placeholder="Email ID" required />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+
+<!-- Top Banner Ad with Embedded YouTube Video -->
+<section class="banner" style="text-align: center; padding: 10px;">
+  <iframe 
+    width="980" 
+    height="360" 
+    src="https://www.youtube.com/embed/rUIEzPRU8yc?autoplay=1&mute=1&loop=1&playlist=rUIEzPRU8yc" 
+    title="YouTube video" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+  </iframe>
+</section>
+
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Featured Carousel -->
+    <section class="featured-carousel">
+      <button id="prevBtn" class="carousel-btn">&#10094;</button>
+      <div class="featured-wrapper">
+        <iframe
+          id="featuredVideo"
+          src="https://www.youtube.com/embed/3zBHej8fEEw"
+          title="Featured Video"
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay; encrypted-media"
+          width="100%"
+          height="450"
+        ></iframe>
+        <div class="featured-overlay">
+          <h2>Monika Panwar Receives the IMDb STARmeter Award</h2>
+          <p>And Shares Some Spooky Stories</p>
+          <p class="meta">11:09 · 👍 36 · 💗 12</p>
+        </div>
+      </div>
+      <button id="nextBtn" class="carousel-btn">&#10095;</button>
+    </section>
+
+    <!-- Up Next -->
+    <aside class="up-next">
+      <h2>Up next</h2>
+      <div class="video-listing">
+        <div class="video-item">
+          <video 
+            width="100" height="56" 
+            muted preload="none" 
+            controls 
+            onmouseover="this.play()" 
+            onmouseout="this.pause(); this.currentTime=0;">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-info">
+            <p><strong>'Superman'</strong></p>
+            <p>3:04 · 👍 773 · 💗 406</p>
+          </div>
+        </div>
+        <div class="video-item">
+          <video 
+            width="100" height="56" 
+            muted preload="none" 
+            controls 
+            onmouseover="this.play()" 
+            onmouseout="this.pause(); this.currentTime=0;">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-info">
+            <p><strong>Diego Luna Says Goodbye to "Andor"</strong></p>
+            <p>4:17 · 👍 68 · 💗 41</p>
+          </div>
+        </div>
+        <div class="video-item">
+          <video 
+            width="100" height="56" 
+            muted preload="none" 
+            controls 
+            onmouseover="this.play()" 
+            onmouseout="this.pause(); this.currentTime=0;">
+            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-info">
+            <p><strong>Dominique Thorne Stars in "Ironheart"</strong></p>
+            <p>2:47 · 👍 158 · 💗 101</p>
+          </div>
+          
+        </div>
+      </div>
+   <a href="https://www.google.co.in/search?client=ms-android-oppo-rvo3&sca_esv=e7ca8cbc53cd9f33&source=android-browser&q=browser+video&spell=1&sa=X&ved=2ahUKEwj0lYaDu7SNAxUkUGcHHYkyA4AQkeECKAB6BAgNEAE&biw=360&bih=608&dpr=3" id="browse-link" target="_blank">Browse trailers ➤</a>
+
+
+<div class="trailer-panel" id="trailer-panel">
+  <h2>🎞️ Trailers</h2>
+  <video controls src="trailer.mp4" width="100%"></video>
+</div>
+
+    </aside>
+
+  <!-- Featured Today -->
+<section class="featured-today">
+  <h2 style="color: gold; font-size: 2rem; font-weight: bold;">Featured Today</h2>
+  <div class="featured-scroll">
+    <!-- Featured Card 1: Stand-Up Specials by Asian Comedians -->
+    <div class="featured-card">
+      <img src="https://silverkris.singaporeair.com/wp-content/uploads/2021/05/Feature-Image-Netflix-8-Standup-Comedian.png" alt="Stand-Up Specials by Asian Comedians">
+      <p>30+ Stand-Up Specials by Asian Comedians</p>
+      <a href="https://www.imdb.com/list/ls568712654/">See the full gallery</a>
+    </div>
+    <!-- Featured Card 2: Keith Simanton's 2025 Cannes Picks -->
+    <div class="featured-card">
+      <img src="https://media.gettyimages.com/id/144974940/photo/cannes-france-col-needham-emily-glassman-christian-gaines-yasmine-hanani-and-keith-simanton.jpg?s=612x612&w=gi&k=20&c=vT_V3M9Bx6Wo_7LEraGpGs3FF1Q4yz_vse6Xc1Hv6SA=" alt="Keith Simanton's 2025 Cannes Picks">
+      <p>Keith Simanton's 2025 Cannes Picks</p>
+      <a href="https://www.imdb.com/list/ls592118730/">See Keith's Picks</a>
+    </div>
+    <!-- Featured Card 3: Mission: Impossible Poster -->
+    <div class="featured-card">
+      <img src="https://preview.redd.it/mission-impossible-posters-which-one-is-your-favourite-v0-pvl9noo5mf0b1.jpg?auto=webp&s=4942ccdbeb78f367db5030be7843f75f5e7a5e24" alt="Mission: Impossible Poster">
+      <p>'Mission: Impossible' Exclusive Poster</p>
+      <a href="https://www.allposters.com/-st/Mission-Impossible-Movies-Posters_c21695_.htm">Watch Trailer</a>
+    </div>
+  </div>
+</section>
+
+
+    
+    <!-- Most Popular Celebrities -->
+    <section class="popular-celebrities">
+      <h2><span class="section-title-highlight">|</span> Most popular celebrities <span class="arrow">&#x25B6;</span></h2>
+      <div class="celeb-categories">
+        <span>TOP RISING</span>
+        <span>BY RANKING</span>
+      </div>
+      <div class="celeb-list">
+        <div class="celeb-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Wg5sJlqSXKyvws216oheYptxDMCh6iiNYIXObLLaF-n6GpLJ26jzmcNAoM5KOFidm4ATBwp7Fp50e10D89ozug" alt="Celebrity 1">
+          <span class="rank">17</span>
+          <span class="rank-change up">(▲903)</span>
+        </div>
+        <div class="celeb-item">
+          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQa3_MuL7y3sa883VcxilBhYWinkpj7NLqYltMxLv185G9Uk1xeWcQnUMB1IeaSxzVGUeQerSwiSUo6Glp37CFHBg" alt="Celebrity 2">
+          <span class="rank">22</span>
+          <span class="rank-change up">(▲840)</span>
+        </div>
+        <div class="celeb-item">
+          <img src="data:image/webp;base64,UklGRuAfAABXRUJQVlA4INQfAADQsQCdASo4ATgBPpVEnUslo6KnpTKMCPASiWVtPD3EnPi19s8YtbWoBM8U7RCKnb97pZnGALuf53Mq1noHmfBL+5eop0xihs/PCL2F0IDUhNHbTROPHUXKWY/bd5FzuLiEzRZawBXYmPKrDQs+6nRVlxJ0mnUi54CzcDUmHwKAp7HNjH3JnTWp2uW/IpaOQKLZMqHeme4eKZzB/luC2rcLDVzP8ujyR6jb0V+yeBBxjBXGfLbeal6NwVo+VCGuT0RGOnNYxFJCy5I519BWPdW3XLQVyugGj7dgmmHQv6vjcax7KugVveBAdpG0qSp5Nse/iiWswyX5U+6IMd9mv5fBQGwNKWFo8TfxRrsDufHNrSI4aW5n6FNFHyLVHqQSKFAYLkYZTHXWR+Z8AC4vNnySOgFuZ0S/IVJV5o32QvfBDf3IL8u4cAVl0axEM5dWqqhxBCws8n1b0XLKsGDdtoNyD3MRwJJ14gDdgVXeyYyuEXZVsm96bLhgsWBkyJLG2maYgysd6UrE3pUgITScpvbZFXiRjc72KSZ1DHsBvJvFuhEplVx3llHLDxI/n8ihRTpfYpklZ9hd2tZCqNYsLzpXTtbaIH6XR0BXWC0rIPBqK+EV92M3Kcq5TldDewisGgib5G+OsMNIjun2CraAzC0mJVHuug5cDv5UI3BFPrL4/C17TRjdJZpfcPr1DjpyI3LU8WIE6p1KvwnVDxs7+DWVzt4l/BBFjmhvj901Ec1a6of7xqxz+hFssaN2mpFXP2V6UnVqnoYd0zYCEI783mMPC+XuCcLSoWgv83dZ5TZejWabpvQFvsaU/ZlywUlST3Dr7JI/CwnkI2qBHTKwpMMhqwN0JWXGXhCeIyTXzNM57fjZnZi8q6/IEERrESllFOrm7IdXQMWHG2ljpD9O/cbS26XolbxbNaHPSCrniasSM6imLUTNGJb8+0LOLM+jmAKqAWLg6iMZLvhuuU98x6tV2ZE5eBq7zS7499jkNu97/dE8yJGC6dNlQRYa3PzNX19MnwlMsW6KJ4CMMcTspraQY6XhT9dAMcAePzVAvzKmJuuPu+SZ9KQPoeWB/uXardxGEfWW2kLRVr73hf4zMOXAI+T0DsoqAKlp2D2iY7+V+iiwcL6b+W2DUpzB1wLR6+G0W5moezMC6vD15gZnBdACyhbhbVDe2oLLf/8+sHJz7wGeZTGMVr6vFbhvB+FDsrhVMdbv3NYjMtPkJ29CVpxfJVqFOA3nuagFKsQP7QWs+UF3hlqWNlHTMTkr2nfOWArnYgKqMgGik9wWUKPkjS9akHwcCDFdxdbr/5vl2yPqXL7eFEaNn2vqxJWpLlP5bpvUnsEWoGR+1zwC/fw5HcVE2IbcIw9sJLzH+myG+C/OxExHsjLpiY4e/QGLGL2fCPBvpkuCDEVEHeDAJlv/DUXX6hYhrBZiTnoGeyQP9QpK3uzCfpdLYG5mjlHzOGWxkRqKIW6tijj3s5hCCzfW9bxRESB2ya7SHUI76dm79lyiXbteJfFWI1TDSJlYduR3ARKqB2bA/ponMJWX2mtA6pFnNO/GtyCgJX6qYTA/5SbDKYsLLokmEm2eIvDIhbhAI/GCeT4eltNTrKIitYP6KGMb+Afp9kapmM/U9ZSqxpE2vBhJbdGXhEdf2nCrSSIKOzhwI+eypW9QdVkAO1+GFR99DLbDSBsYDOJbhC3L3xzrH/Uch2JZhBLfb3/uJT2IvwLuhI+t2sAucdDPYYDrJZMZYzS85302CEwqLwYXI5vn1537WoIE82G09h7u9tgYi24EUgSvTABudnG6zSOKw01kR+Efb39FJk9/b9TkoFNpLOWM8/3oSaF0He523zphiCNt5o/AaLI5QR2CiYx/EzfMQDE78Ha3uXxZIEADryCktjKlMLXs0AAA/ly8TOhCS4hpH6Q6dvNT3FPPHIEwHUiQ3M8lQ2IcD8lLN3hSo2RRTCP4FdwjspasP2GghCndhQ7hFvAIM5hC2zyNbXW5Pj2MLTsKK/4xN8QBUVwdCch57EivwUu5Aj7+8WCXXX3Z+Wk71zp+C/I/H398V0JuReV+cq59L1c9Xm15JY7zJBEMXHWl1/l18Je42UdUcXLWoZ2lUFwBFvZ6Fx819sOaBbP6kFO00JEd3Y8eL4yCffbc5Su15J0Hd12REHfcrK9V5+jaEHCGZdvcVdYCQ6zEQEDnt5H1hVh6dwXMzbXwp4irhApXcNt43b4avl29dD79znlhw8rDbGE/LCcuAcPqY+jZo8XevHYX03bL61hU6S6Sm12qVK17AmzN+NzaNb1FZcUwUAy9kJV1WfpX5b9jYh/055yuoj16dCZushi40jKyTALOGuagikdxrPuB7nvqNQt3ehJ10w6fkKIGB9PVNsWeX+U2GV+HzhUdXEqDjFBs+zdlz0UgaKFlPE4Wmeh7TEGcGHYjHONYBo6DfEaanX9RRnfFDivunbFFCb7PlViWklUy2o4Q+XmV02/fa3cR8fZLI+kopuzF5fFX8wS+nkP6djmi3pfaywzM/zbQO8Ec8cbN92f5/zC+Il1QBGHpDShHyQSPgEUfPOUgLvl35QbslMMWSimGqua0owfc1RRKK8a3katolMaxs96OrmzV34ZDsIv9AOL4W3ihJcHQKirN32iqi4DENd0yKtR6dh915AErtqTYak+hA034NEBrlVfnRkP7M1ZdDs8EPK+ZoGJN1SEKcigNVCWocnA8+Rgn/xk6AGgEP1WkH3Tjr120RMX/os0MNasarIEKC35iG+5q6I1aqDJFcyyY1bH/qPR4xtYRvw5QoeDpxIeXGl2rtNiYKwJBBKj3cL1j1MoHLqp7u2rN449vul0QLjDW/Y6cQEBII1GlEQREadGjRNMdOeHSlIoY8DI82Z/oBUDLkmrMMlf4LW2KYDozKOcd0s1lGELJvj6xToTStIXhPT+2PV+tMgaTsmOphX0AcT/UWRLHm1B4TaaO8CHrJVuDhR8c1mEWWI4lovMBhs+aJUsqQq5Qszk+FNvTcDYm+mE6sDINi1Y8TsQlSF21biDazWptpx25hawl6qFrHfleU74HC5fqhX8D7p2lGacdUi8cspjtv2OfYudisf8Q/UGbsjv/sAzPMJZ+9Q0jy50Tu25inxrn95MVspEBdgZ5PoOwc+VUsbrGvjeIu7NWkdMvzAPC4KafbdM/0ZUuAzNCNgdBoQQJT7i4/TrihYcJSB4MGg75dwQ8RGDn1/t0GNNALBDAbLcWXMMZ878uqD0EJNVO2kyBr16gqk6y0mddX0PuEfEksTpx7Mpd+nphlOiIRQP274Xf8yAanoRtISTKTP22BxDV3nFtrWBdovHuySuFFeRK/JCPcjLFJZx5Jj8xBzRsezWAOJh1zyEYlLwGiBvLPIFZLJAwA765uYMIFDPqQw+ST2niXW6peABY5T9UIhDQhasezErtxIOgQbutne62pTNWuipoZdcPJpVUEX9EjdtHO6d2vVAhZO34QejLVrVz8o8OaR7hGEe0O9GGabKDwIFBikDfpJBeet4ZvdD8VuT7FtiMXoRJiMDB33YroGQU+bvhIsy23ia/vBPAt+C54mxLs7F/xCQdSimQRdGogv9//sXMsNY1uYnrmqj9EClJZQZ+wO81QFauPUzF4H0IN17OgaByUw1WAus5QghLrrJn0corJNa/TdPdyK2wEgZUz9ScmkaT+5fhPNHBEr/H0C22+VUnn1J7YA3bRZ/MsOdzaVuWoru4CU7QZacRUHfP7oJgiXg7XBnxjdGjOCeLVikQG5Wn7JQ43AbedY51QpuHNvGX8dibWRypp70OWFk/uqIr8fZ4w2ZNz9O/jQLcwCbMACDjkyeGtK3ZwJdA1nv42gA7qX0f73a5e4mnuZwmQaDQ3OGaoGlS1fPP5EaLxjdQQf5/UliM0/PWxDGxDSFGqKNFjsBSqWcr/fFYzmFqg9krmNgpdw8ff+YXEIxtA1BYXHuWN5hRGHZjCya/o6CpQPvdnkQLn1jjBoD18KbcDl680DFzE/U+TQvffIQrLDwLwk8zkONbEOgE1ZYx/jilxOKntuyhE88LMGSpxtJow2uZ3lUWIEhCaIFwuoOzZT+BR8auOCtpXH30qlJrwuPnMBjb0dDhj9wWAB9+i6DruvDfyZbbreOxMrW93tvMMdfSFdqB0TizAXZ3o9rD7ePn4jRnrFf0YbhPVejuALmDYSBXhF76up2i14vN+RPkSP22L0R9XNCQRambYrLlbT+kQDxLpOprA7htm9Pen3xyqXLuNAa4ZlNQfbHLK6Vvo8F/es3TYFDtHBjTSPK1M4Usdpqlco6HhjQ6yXjfJPl48C//LCN67F6Uc8YKc4a0NGWqk6i5GEgF0tu0H/QA8GPkmuWyCiPS/smqWvOMT21a/UwdS5gqDML/4vaaoL7tJWQXKpUljnT3Dh4zMTPln6ruRSvP5kB0fkFo+CGm2derqRXyltGXTo7VdA/kgWNRFKwqG/jxDvtvmdXwZzp7t3UL0yxcysL71ovwEqHdUz8bKVHtE0k84vsZQKUUs+4E04dUfSs4jqRcGTUjPgfGEzZrFLpFR4/e8koNbGg5ufgkcWc1mLwRWF3ozMP8xIKT1KtqSXHDq1C6CfovE5+qEbXK9VAQ+rS2wnnlSRLo/ImQtg4pqKj7eRzesUkxoPyaZvggZLdEYZtAkwy2W19pUqQegENeK2w4YVxmcVM6/LuxUsCW3yVJ/IDQ6WtuASZTqK0kUGBLv66pWKhKBbYmanoDrM8snx11YrlPdrUSU0318f7PP+cAO1K7ADBj2gv1/TRZ0Q/YVY2F1Rs09VKaDPQXsaClfQHg1Z+JkysZE2+v/vAgNw3eqvTrFfSNIBAB5adImmxfKOEzQolbQ78mve166vDuwfN97P9PbQ++OMoCR77oUNcSzeadRVCXpiZU1HxwVbKUPgaKRfIaPEbBiqAcWs2hC1BaejqC50NDLLFG0TeFEsDTBJg7NPWf/Nmp1pfH8C+ULLLgItwCSrp2dF+hifRdRYsQh7kBzWkKLt/LSw5B1yt1DY+UuqKVmkDvFoDE2BbbkqHE95lvSHp+Jzqz0YZDB/f+8gsv7DHfDGhov39Oyy3xLP9bfpC19iex7d9ZG8aVCBkU1iJaHzmsmWOa+N9Cn9KuSSPx4NB593loKP0yZVKmPKWKgnrfVnWAihDOXhgsMlRHgYLT+N/q0qRxB/dt2jiZdvS3V4NAVQo3I4YE+noLO0DXfY553m5N4eZbFDvOpTcRQbxjQ3PCJP8LaPD7DQ6SgHdcNemcSpsP1IyzaVDSaK4WNQiBbmmSP23hXITfWHUCxcMnWZbI8nFumHnVSBm/0jXM7yIbqzWwj+d5ECvI6rOOHUWeZylW8CtXCn0A/SxbqMdAOuHWko4RjQPqB5xLWjxvdX2DOger4x89c3iHGxhJaRlGCUYOMoyjWsLIxZbxrmU6AqMutkUrfSDJhjoSRlI8/eJ8nEr6tJt8ItOX7rxK6PEH+3SE/TNz0mQz27Z09RbNbXWGV4uq8ko69nrgsYtTQk6Mz12dOEhthf26LHgSFTy2rPAkPVtWWZYL/SpCY8hESfOdb03gYjF7IHekm6pbQXXLZCOSLPtChHKvYUYpXWNghfphcOqAKzH2w1lsYRK5myiVC9PkrsXCYL7LdLSLMmuhsF7IpdFcA86mtGrFwAX6BkAGKHgfPcNClG4wSmuS/ktPE2OtDmz9YS/dcCkEx8cHBDn0P41utiClLR7feUqVpw7k693PxP+rC1B5eYUOekqfKsJ/HB9fIEj/ADKCWBHEtqHiFA25UgYe411JSLutRNKEo2laKwBOt6RVb/22hgzLi8cEFH05weULAIIhWV39McOV9H9ZxInp6d7aNpf3n1i2jjL4Wtz4OnAfQikTqpR9u94yBPgIFv7CqGzISE9EbD+glrzhrs2QPoncckUIeaFgc2UCjpFaSTDiprJRtXrWexrzYGfhpF8sQsTKCAsPqqKgERJBm1yNNWesAr/qk4SxHzL9o6f/qqJ+SSrmmK0kFBv34Q6Oa6/K2jyp9JfFPsCbCXxZNLhdMssxvCLpwEbPEItbfGk2HfVHg/nbUZeutP33qaaTnvUkNQW8NpkaHMW0VcnFnRzZgvlUcEFgjU92gQMOYpZn6L3NNJIO77RWUelfdNs7mc6IIMhS3IGUy96F/d2aPG6gCsoWW4z3VfYW8XC24aVV0bxg4YZezV6Z3b+QC5DjbDvD2ZbrzGomHjwVJcA1T4LxY3aWgwyoACrz1nWs30E2O7E499eBYv16B95ea4uqeJqttQ3/eGVAH3nf5XQq8GWdN3/DqZinsxL5y4MQwseoYvOjMod2bNJX8piWMLG6LZJxN/eIbAuWuCRdVXKLjDaN2d3bQd+A8pjhBBut8MvhMOD07ZMjtsOXVOgYVz3wzNqlctFtl1t1NajfveOQ0J72j8L6bEyxEIeN3jUjzY6LmsyDA4scPYvucouCbXhgOcCep3XL+Pc+AIqMPdjifCXOA5yavplXOLYpw3dGhBdH/QDLx73g5hs6Fc5BEsAnWfiQLrkhBrNfM63N+O8c8aqn2aeHWE+Iw/d367i2QyGaB2geFWzi0QGNmwXMMZz88vMs5v2XEn0Y/dlGH8Jc1mtgPUrGR06PP9qO8/+5wCgHyt2titQMWBgjUxlKWBHwQKHA7MBBSqUlzPR+QOA68GNHuHCxRHiOpQjC0eLRPP1F1KQbGm16Mw8LeACXkPgu3EAC559npGb1q6Rc1LOdj2CbjwoVoPPCufHmFAR/y9pKflDTsxvCxUFEciB+nJgoABPKIFyXPb8XcpIqkqsIq5Pc7cniaNvlbYT/apqKn0Eq5oCDdK2jwsIwFMiUoX+mgXbPi2wbmq44O8QAalkq6nEINeTfLityo3G+zJ8beZkQjCY++YqwDWwFNPZDhgR52eWyDN9pO67Y+48iSsRN5XI/rBSaHaFI/OqkpYS9idzpzIbfxj9gE2KlLKv3q1syOd2oA9wj00nHJF36u/lDkTTdnboZ+OWe1liBvRwzJI5J1fCiTEK7qnXejjFBt1t9tjfqY2XUx1lWIhg3/00KeLXjaTRif/J5pUwT39jR4r4kRoe3TUn3vHLESts+jf8x9H6eMFlR3/u/rZY2IRpSyV2+zWkNHh8M62vlXxpXYyI7wF3lN9jqdhXZu1WjQZh0D2k+ljUIoDtV+5Gnfa9hMFLpi6sAG5+rwYuDSOkLgv+CBZ4gHyTHe+QED0X5dQIjW0Bt1k2N41Ay6OMCIIofpy6JnAEwW9MPmWfY9dSwcPL0J/MWfKikcdsooYuig4QXUXx6zIFpMyr62tHBdaJHpDcroqw/T4kufS4e2Lk3t9szzmtvYamvOPq9DTdNnemkdvYrHdJtopxMnMZinkJddJ3bbl36lektCYSXU9QNKbRHiMBGu7xSlf0c1fzTFhd/tg6NpSrBVJ97n+zosrNIHsSjgY2t0TORCp/IgeEZ2EWfkrIvo6byK4Ha5UWopTSogQYfjWMu2MofiVa635LnQil7W4mtzjXnBd7OwpZ8dfjMO8PbcCNI9KGxQibVmIoZmiauEx+SKvNh1dpbNgVj9SLFHYGWscV0DtE+lrIHej8vwt1oWQBRl1P/47q1ZEqXiB+2SMSyl+iyB5mcvKdHR38Hv04DjEskB6sXS1pyu3FIJ/p2/rLPuRdmu9hNsV0rXjNA9yMQ4AwHz03OpgwH8MWkLfOM/UU6VwFfNOG+ZuCFCKDtJbmE8Jc2jH1tzZV2PluEfhjYuiIkskryMJsLy7Tqs4k8/0u+R2LJWvQKpThAFeT9IMLYdiMbf4MoVA89ihR/r4ESXB6ITgjRKx7b8fK28JbnlZ3SEfkhnXDaQt6lG02Fs3OW74oHp8K0bX3wsTfasT7ykAIu/7Whvkt3nMBca4zOOfgGI0TpafFOQDqjdO9rVTMwkL1LD3m5lnBA1OJqGqK9Kcw+uHHiZV20u0s7SlfJqdv3iyXU8pGtgVPO/WuOHpSsb96SsloJoD4awkcA2BWPl5f0frl8m6cdIj/LzXhBPBQ7M3dvc6tR+XIH/IigxsUasrSHIxeW5DGnh8ei90VMNUKdCZMINSpzHh0kKQHXAkfnsaXd+KLJhDf+H2+uU2TOY/6tIs8dk1LBqKQz/09PQpRhKED7jt82f3NhYAgc3bAgeaqGi6uRryRNtJffMmdpakwPt46xA3CdtcAqXoWTzNZmo5cHQnZvBklwcsjgiSjlpwhaxSd2KY5p7zlZ6thEWaiK2e2F03PotFAqS3d/YgTpKUmQyxM2JkrT+tj4UV7dzQRZpK069Zjl2DGion0wGlgnI3+SDYm5D7zjQazwsRkHyDaplDlgfWtrmGcFZtuQO9QD4H5s0AOmDydcTLPhD2N+4EAQuVN+Q22cD+1ZHclOqEcbOg/z8PTUTN6TJwNIEaku8hl5186FgjpA7hL6PMhAGyRrp23XexRsa2VbMstDstppbPr2jA9mn0Rej+oCZnY2aRlH4+1vNGx+q9QGz8P4NgvMA0+UxrwLUKI9OqTHB0SaewjcM08Fw5ANvnjhI8Un9VbfQlOJCrVj69Dfrfa2KUcjrjFjrA5+SJka6VvHEzf6D0dbd8nc8WstipT5w5mJUdGGBocwpAeyoaAuAOPPZbmEjm+M9KvMyivZ2xbdc171J2pKDqlZF0TLTVNYgeH4D3PkD+QIUs+n5taJmzXd2Yan3b1px/afLDbn6Ug1YDRg4JuaRSOTpTYRm4gOwMRQGkJ6Cb4ZdbWR8EPYAQXRwNdlZkYBzgsjT1Z8Li75lBnPoegS4kD0kOE9CUKPSe+XYDGHm8d6H/3ZcarzODtNKfl/CbN2dB94uoNFKuHpXh3oau6AhICrAHdNb4H9C/fyIvXsRoMqANluDgg1ukEJDzvqoiK4qh9vLEi3xSI/m80O/YsxpLcpv2TgC83GuEkbqo2HqM4bN0Gl+ZoL5CCd0MZepIzIO6h44y9jJM+IdFUvlthcizNJC6Y7Hqz781qFKQo9OhHlqz18ePepWyJarv0ZkrRMoZG59vExSD6OMO0s0agJ5KU8EleKnWzUHx9jsygIH/SqLsHJmOpKvLKN0JMhhVRqIHyrN1KZ6gMDCPccb7VsO5k5WAg4JpMT72Sv8urMKSH3Txhb5wiZyZGk0BsyMIEBGv+DpTQ3t38S4IuLOjR3BZNDRiIiE2gCrk1MFhG11xzvsBUUrhWgNp+sJuCYQKzlgeUKbjIRB26MoGnIXLPVETWFEH5GONdJ0EWNoRh0NWi4/ixgL9+3C57Ihxteb/cfZpanJk5If1bQaM6poLsLitstgiDl0nfrA0vc94dcNpoRdL6wyioh1qRJvGRaVf9PjwaPk+hezZ0ABtuCOLKey2lEDdKSz0zAF/2YFhPv3zSD36a2nw0BPZZSIrFbZTFtHuGy8x7xYpunqIyilnL50M+KOb+9FU7q+VZa6952pULjBqS6rNrqYA7o2odxQyl78FvPPrEZsrAmDsKs68b7Gj2S5MPM/zMH2aA5EU9QWBX/y4+fZ4bse2Ik/t352cYJ5Em4U8DIc68RZdfjaQ302H8T/5rXFlVUq3dg3B1Tu7G4AC6ruh4uycJKkq0F/tZpz7cWW7t5CVkVoc8cJrJtibgY8Zr1xc1FRc9+ugkjpLHlEvKKb7FAdq2/+R0fsIOYEzJAbmJCjyRioNPiXKA5wL6xy5hd+Y2yklmcqCB9zI/VMOwWeI1MF2THvZGWT2mNwEMGyJVzNH2kTAPAXYw7t+qb/gJWX2HahN1nCt8bvCQE1L4mceSpK6xLQBPrspjwKNFBXo6PsMQCgYfe7ohIgOg+Z27Co5EiL+Vvt5f5GeyiuOtdtW8UV4HAy0rV9SnuujZASZM2Fc7LCkElgvmgEJJwLNKHojNb0YoO9psRcz4mklTiu0/BSc17bszHI4jj+bdo9vDhDIU8br/oo6KIdxCBmfUxvkq/IAmRksxGRxq0iH0ZeNmu8kLi39rTUsQqXgFeVfB9gIU0e8X9NPTBGUGv5DS+URCuXdF3lGSUVMeSXbl5HosZQWE/dliK2QmkAJ/fA9V7LHUTeAzc9qNzNmiwpnJ8FtXXccuIkUJ/HfdWd5VCfNZcF8ru85QamaIlOouXIEsxmeJjF2GApWzHsdQiQCMnyqF92QruWpo2RWA8hxQ1Bf8YvxUzsBR3B+ZRS+uw1JBBNCIkKq6e6Vo7qldcKkukenThV/t2X2zPvAAglIXXWN0gaS8E5domphzb9hYhXpGV8AIg2NAgOCf+bh2K0mdvypNIR9iv8XEfQZCZhfrQmZYwcrjipf3Wzaq5Z+q6zvkAgCl8HBFYKKbYXtiYsSPneAFFJ0Qm0qrRzxyjSRyQAE5bjaIGmVrwHUhcAm0FoF+mxc+eTj4CwLCcWf4JLEj2jrMUrVpctx8PuVvb2RxIv8dTKgXsJMscZ0GG+jhF3SXUnrKLLKccBCwcvWZu3FvNuOatWc+czrULpNhyKkBeWvCeQ9dE7C4qSgUOeevQexRKKAr5S2AhbJQRRY+dZ3mrkUvhHnI58W180415LAyxKFEfv4RI9gwYqoLSEREGMJF6ZxF36tIioPBCDYCPmjEiYGsj0mmWbvf8+uut+p3Li0sX/ZSXUVvGl3fYWQkwPsXigazoIE36b9wSxQK3QWwvnPcI1okP+Jae5hHU2695Em4YMvCBQCu3+9/9MSBISyH64lcgoXGNRw4tUnnCysnlKfEYaVtxFETarTtnthPGMiMk14kMdktaJU/hEyIuWbv05EdSzcIFcG0TzStSojtZA/aPZinV4Q3vr3Ag0VqCpfsRQNItjK73LJhDbXEJBbZOrhRUw4SpHcQpsgA=" alt="Celebrity 3">
+          <span class="rank">1</span>
+          <span class="rank-change">(—)</span>
+        </div>
+        <div class="celeb-item">
+          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSsxQqt2OWsS7srrMb4gecStqA9rbCwqfm3WBpq2a3kgLg55prHBYwiSSWeHrbGVCPp4ieSUbZXBrQqY9hLoTRQYw" alt="Celebrity 4">
+          <span class="rank">2</span>
+          <span class="rank-change up">(▲4)</span>
+        </div>
+        <div class="celeb-item">
+          <img src="https://m.media-amazon.com/images/M/MV5BNzQwYzcyOWUtOGY2ZC00ZGVkLTg0NGUtNjNmZTg5M2JhZWU2XkEyXkFqcGc@.V1_CR0,1,971,1457.jpg" alt="Celebrity 5">
+          <span class="rank">3</span>
+          <span class="rank-change up">(▲1)</span>
+        </div>
+        <div class="celeb-item">
+          <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRcmkraGkcWyfvu2VVl5mRAGl9sZtcvR3PF10EhfigJX-Pcfnq4LuE_Ku7xkEamfr2T50TP0MUQ8rYYli8zbkjqNSZG8Nlj5rI1UI6vo4EODmqP6NVfGV7t6JIjLgHdYS0hcwLxZG46" alt="Celebrity 6">
+          <span class="rank">4</span>
+          <span class="rank-change up">(▲14)</span>
+        </div>
+         <div class="celeb-item">
+          <img src="https://m.media-amazon.com/images/M/MV5BZWNlYmQ3MzctNTM4OC00Mjk5LTlmM2EtNTU4MjgxMjNiZGEyXkEyXkFqcGc@.V1_FMjpg_UX1000.jpg" alt="Celebrity 2">
+          <span class="rank">11</span>
+          <span class="rank-change up">(▲3)</span>
+        </div>
+         <div class="celeb-item">
+          <img src="https://m.media-amazon.com/images/M/MV5BOGU1ZGViNjUtMGM1NS00MWM5LWExNWQtM2JjY2YzYzZhY2U0XkEyXkFqcGc@.V1.jpg" alt="Celebrity 2">
+          <span class="rank">12</span>
+          <span class="rank-change up">(▲1)</span>
+        </div>
+         <div class="celeb-item">
+          <img src="https://m.media-amazon.com/images/M/MV5BMzg5ZjIwM2QtN2MxMi00OGNiLTg4NDgtODc2MGU4NWZiNWQ3XkEyXkFqcGc@.V1_FMjpg_UX1000.jpg" alt="Celebrity 2">
+          <span class="rank">22</span>
+          <span class="rank-change up">(▲840)</span>
+        </div>
+      </div>
+      
+   <section>
+ <!-- Watchlist Box -->
+
+
+  <!-- Top 10 Section below watchlist -->
+  <div class="top10-section">
+    <h2><span class="highlight-bar"></span>Top 10 on IMDb this week</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <!-- Movie Cards -->
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://m.media-amazon.com/images/M/MV5BNGI2MTJjMjUtMTJhOC00YTY2LTg1NjUtMTdmMjg4YTk2YjM5XkEyXkFqcGc@._V1_.jpg" alt="Andor" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://m.media-amazon.com/images/M/MV5BYWI3ODJlMzktY2U5NC00ZjdlLWE1MGItNWQxZDk3NWNjN2RhXkEyXkFqcGc@._V1_.jpg" alt="The Last of Us" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://m.media-amazon.com/images/M/MV5BMzc3OWFhZWItMTE2Yy00N2NmLTg1YTktNGVlNDY0ODQ5YjNlXkEyXkFqcGc@._V1_.jpg" alt="Final Destination" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://i.abcnewsfe.com/a/3445de02-6ba5-4ac7-a288-a1c859caf85b/ariana-grande-1-gty-bb-240227_1709056747997_hpMain_4x3.jpg" alt="Nonnas" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://m.media-amazon.com/images/M/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Sinners" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Thunderbolts%2A_poster.jpg/250px-Thunderbolts%2A_poster.jpg" alt="Thunderbolts" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrkAWsO6pBp1bP9IpUq6s1nGFY4fQHjyyfLg&s" alt="Killers of the Flower Moon" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://m.media-amazon.com/images/M/MV5BNDBhMmI3OWYtZTA2Ny00Y2RjLTliMWQtYWY5MGIwN2RlZGFjXkEyXkFqcGc@._V1_.jpg" alt="Extraction 2" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13472534_p_v8_am.jpg" alt="Barbie" />
+        </div>
+        <div class="movie-card">
+          <span class="plus-icon">＋</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStvQYI1I0qPUP_oK9muaw9AuM-N-GyuD3eYA&s" alt="The Marvels" />
+        </div>
+      </div>
+      <button class="scroll-btn">&rsaquo;</button>
+    </div>
+  </div>
+</section>
+ <!-- Fan Favorites Section -->
+<section class="fan-favorites">
+  <div class="section-header">
+    <div class="title-bar">
+      <span class="yellow-bar"></span>
+      <h2>Fan favorites</h2>
+      <span class="arrow">❯</span>
+    </div>
+    <p>This week's top TV and movies</p>
+  </div>
+
+  <div class="carousel">
+    <!-- Movie Cards -->
+    <div class="card">
+      <div class="card-image">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ab/Final_Destination_Bloodlines_%282025%29_poster.jpg/250px-Final_Destination_Bloodlines_%282025%29_poster.jpg" alt="Final Destination">
+      </div>
+      <div class="card-bottom">
+        <div class="rating-title">
+          <span class="star">★</span>
+          <span class="rating">7.7</span>
+          <span class="outline">☆</span>
+        </div>
+        <div class="movie-title">Final Destination</div>
+       <button class="btn btn-options">Watch options</button>
+<button class="btn btn-trailer" data-video="https://youtu.be/UWMzKXsY9A4?si=BuePatQDs0igCWzL">▶ Trailer</button>
+
+<!-- Modal or video container -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; z-index:1001;">✖</button>
+</div>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa1cgPI7I_IBk4R31kOqlYK3w9h7zelwAx7w&se" alt="Raid 2">
+      </div>
+      <div class="card-bottom">
+        <div class="rating-title">
+          <span class="star">★</span>
+          <span class="rating">7.7</span>
+          <span class="outline">☆</span>
+        </div>
+        <div class="movie-title">Raid 2</div>
+        <button class="btn btn-trailer" data-video="https://youtu.be/kQF1gl7nLaU?si=F_hwOZvcMyQT-s1N">▶ Trailer</button>
+
+<!-- Modal or video container -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; z-index:1001;">✖</button>
+</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSafalx_eWYqtyL60gkiDE61XXeEmyeuRBf8g&s" alt="Mission Impossible">
+      </div>
+      <div class="card-bottom">
+        <div class="rating-title">
+          <span class="star">★</span>
+          <span class="rating">6.5</span>
+          <span class="outline">☆</span>
+        </div>
+        <div class="movie-title">Mission Impossible</div>
+       <button class="btn btn-trailer" data-video="https://youtu.be/G1VBfMCZVkw?si=C7zWxrTgLpuhN47q">▶ Trailer</button>
+
+<!-- Modal or video container -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; z-index:1001;">✖</button>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trailer Modal -->
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <iframe id="trailerVideo" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Popular Interests Section -->
+<div class="bottom-bar">
+  <div class="bottom-bar-header">Popular interests &rsaquo;</div>
+  <div class="scroll-container">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR690_YN084o8kqIVsu9FK_df_lTVLqNJbITg&s" alt="Superhero">
+      <div class="card-title">Superhero</div>
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTqSexZC5fL9QgKnq9SPKGqjI9DY6JSgmW1w&s" alt="Coming-of-Age">
+      <div class="card-title">Coming-of-Age</div>
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTssh9kMviSSUawS0-hsHBp-97jzOnkHTsm8w&s" alt="Slasher Horror">
+      <div class="card-title">dark comedy</div>
+    </div>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/81Zqwb3Id6L._AC_UF1000,1000_QL80_.jpg" alt="Raunchy Comedy">
+      <div class="card-title">Raunchy Comedy</div>
+    </div>
+      <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoLB0edjdZKMgWwZLJH8qwknSWWatt93BXWg&s" alt="thriller">
+      <div class="card-title">thriller</div>
+    </div>
+       <div class="card">
+      <img src="https://m.media-amazon.com/images/M/MV5BMTgyODQ2OTkyOV5BMl5BanBnXkFtZTgwNDM3MjI0NDE@._V1_QL75_UX2048_.jpg" alt="streamy romance">
+      <div class="card-title">streamy romance</div>
+    </div>
+  </div>
+</div>
+
+  <section class="streaming-section">
+    <h2>Explore what’s streaming</h2>
+
+     <nav class="tabs">
+    <a href="https://www.primevideo.com/" class="tab active" target="_blank">PRIME VIDEO</a>
+    <a href="https://www.netflix.com/" class="tab" target="_blank">NETFLIX</a>
+    <a href="https://www.hotstar.com/" class="tab" target="_blank">JIOHOTSTAR</a>
+    <a href="https://www.mxplayer.in/" class="tab" target="_blank">MX PLAYER</a>
+    <a href="https://www.jiocinema.com/" class="tab" target="_blank">JIOCINEMA</a>
+    <a href="https://www.sonyliv.com/" class="tab" target="_blank">SONYLIV</a>
+  </nav>
+
+    <p class="included-label">included with Prime</p>
+
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <!-- Movie Cards -->
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/M/MV5BMWIxMzk4NmItZmM1YS00ODUyLWFlNjgtZDQ4MzljZTZmZDQ5XkEyXkFqcGc@._V1_.jpg" alt="The Handmaid's Tale" />
+          <div class="info">
+            <span class="rating">⭐ 8.3</span>
+            <h3>The Handmaid's Tale</h3>
+           <button class="trailer" data-video="https://youtu.be/xBBRUdLBsFI?si=Ek0lPfQd0ZGcJmEq">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/S/pv-target-images/6a7f8d7f888bb05f9dd621c8a618b5a698392622a1255dcca6638f472f4c33bf.jpg" alt="A Working Man" />
+          <div class="info">
+            <span class="rating">⭐ 5.7</span>
+            <h3>A Working Man</h3>
+            <button class="trailer" data-video="https://www.youtube.com/watch?v=uLtkt8BonwM">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Overcompensating_%28TV_series%29.jpg" alt="Overcompensating" />
+          <div class="info">
+            <span class="rating">⭐ 7.7</span>
+            <h3>Overcompensating</h3>
+          <button class="trailer" data-video="https://youtu.be/LSli17bsonk?si=Z0u-xweELrU736Cq">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/S/pv-target-images/90675cc6356f893ec6f202b0e402319129e456479db0dce57fbb7da91469fac4.jpg" alt="Conclave" />
+          <div class="info">
+            <span class="rating">⭐ 7.4</span>
+            <h3>Conclave</h3>
+           <button class="trailer" data-video="https://youtu.be/JX9jasdi3ic?si=U7TF2xd3jlr5J5Wz">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/M/MV5BMjE1MjlmOWYtYzdjMS00OTgwLThjMDctZWU4N2FkZjgyNTJiXkEyXkFqcGc@._V1_.jpg" alt="Final Destination" />
+          <div class="info">
+            <span class="rating">⭐ 6.7</span>
+            <h3>Final Destination</h3>
+           <button class="trailer" data-video="https://youtu.be/UWMzKXsY9A4?si=XgSsQuwqkW0ykpVk">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Jurassic_World_poster.jpg" alt="Another Simple Favor" />
+          <div class="info">
+            <span class="rating">⭐ 5.3</span>
+            <h3>Jurassic World: Rebirth</h3>
+            <button class="trailer" data-video="https://youtu.be/6m1eOoUoVao?si=uxHbkBd82_0jsTCV">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section class="section-header">
+    <h1>Explore Movies & TV shows</h1>
+  </section>
+
+  <section class="carousel-section">
+    <h2><span class="dot"></span> In theaters <span class="arrow">❯</span></h2>
+    <p>Showtimes near you</p>
+
+    <div class="carousel">
+      <!-- Movie Cards -->
+      <div class="movie-card">
+        <img src="https://www.tallengestore.com/cdn/shop/products/Mission_Impossible_-_Tom_Cruise_Poster_6ac112ff-4293-441a-ba42-5a4bd47355b4.jpg?v=1569314550" alt="Mission Impossible" />
+        <div class="movie-info">
+          <p class="rating">⭐ 7.7</p>
+          <h3>Mission: Impossible - The Final Reckoning</h3>
+            
+         
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://m.media-amazon.com/images/M/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Sinners" />
+        <div class="movie-info">
+          <p class="rating">⭐ 8.1</p>
+          <h3>Sinners</h3>
+         
+         
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Thunderbolts%2A_poster.jpg/250px-Thunderbolts%2A_poster.jpg" alt="Thunderbolts" />
+        <div class="movie-info">
+          <p class="rating">⭐ 7.6</p>
+          <h3>Thunderbolts*</h3>
+         
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAjmin7GhGkMNPpxvnomGwpT50MHooR-n05w&s" alt="Lilo and Stitch" />
+        <div class="movie-info">
+          <p class="rating">⭐</p>
+          <h3>Lilo & Stitch</h3>
+           
+         
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ab/Final_Destination_Bloodlines_%282025%29_poster.jpg/250px-Final_Destination_Bloodlines_%282025%29_poster.jpg" alt="Final Destination" />
+        <div class="movie-info">
+          <p class="rating">⭐ 7.1</p>
+          <h3>Final Destination: Bloodlines</h3>
+         
+        
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Jurassic_World_poster.jpg" alt="Jurassic World" />
+        <div class="movie-info">
+          <p class="rating">⭐</p>
+          <h3>Jurassic World: Rebirth</h3>
+          
+
+
+       
+      </div>
+    </div>
+
+     <div class="movie-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Overcompensating_%28TV_series%29.jpg" alt="Overcompensating" />
+        <div class="movie-info">
+          <p class="rating">⭐ 7.1</p>
+          <h3>Overcompensating</h3>
+         
+        
+        </div>
+      </div>
+
+    <button class="scroll-btn" onclick="scrollCarousel(1)">❯</button>
+  </section>
+    
+
+   <section class="coming-soon-section">
+  <h2>Coming soon to theaters ➤</h2>
+  <p>Trailers for upcoming releases</p>
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <!-- Movie Cards -->
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/M/MV5BM2MwYTlkY2MtNmUzNy00MTljLThjNDAtZGUzNzMxMzcxNzM5XkEyXkFqcGc@._V1_.jpg" alt="Karate Kid: Legends" />
+          <div class="info">
+            <span class="rating">⭐ 8.3</span>
+            <h3>Karate Kid: Legends</h3>
+           <button class="trailer" data-video="https://youtu.be/LhRXf-yEQqA?si=A-PELL4e4UFUQm-T">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/M/MV5BNzdhZmY2OTQtYWI4OC00ZThkLTlhZjAtNzE2YzRjM2Q5YjJlXkEyXkFqcGc@._V1_.jpg" alt="Ballerina" />
+          <div class="info">
+            <span class="rating">⭐ 5.7</span>
+            <h3>Ballerina</h3>
+            <button class="trailer" data-video="https://youtu.be/yNN2PoilSp4?si=W2Oe-tMn0I--l-cG">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScFlIfW-GW4zxr9c6E9hFTANS-sOPhNmwvuA&s" alt="Jurassic World Rebirth " />
+          <div class="info">
+            <span class="rating">⭐ 7.7</span>
+            <h3>Jurassic World Rebirth </h3>
+          <button class="trailer" data-video="https://youtu.be/6m1eOoUoVao?si=IB42pnvV1xp7HQBH">▶ Trailer</button>
+
+<!-- Video Modal -->
+<div id="video-modal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:70%; background:#000; z-index:1000;">
+  <iframe id="video-player" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; padding:5px 10px;">✖</button>
+</div>
+          </div>
+          
+        </section>
+ 
+
+<!-- Continue to Editor's Picks -->
+<section class="editors-picks">
+  <h2><span class="highlight-bar"></span> Editor's picks</h2>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="https://www.tallengestore.com/cdn/shop/products/Mission_Impossible_-_Tom_Cruise_Poster_6ac112ff-4293-441a-ba42-5a4bd47355b4.jpg?v=1569314550" alt="Mission Impossible">
+        <p>Staff Picks: What to Watch in May</p>
+        <a href="#">See our picks</a>
+      </div>
+      <div class="carousel-item">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Thunderbolts%2A_poster.jpg/250px-Thunderbolts%2A_poster.jpg" alt="Thunderbolts">
+        <p>Everything New on Max in May</p>
+        <a href="#">See the list</a>
+      </div>
+      <div class="carousel-item">
+        <img src=" https://static.cdn.turner.com/2025-04/pee-wee_as_himself_ho_ka_27x40_premiere_0.jpg" alt="Pee-Wee Documentary">
+        <p>Poll: Movies About Letters</p>
+        <a href="#">Vote now</a>
+      </div>
+       <div class="carousel-item">
+        <img src=" https://m.media-amazon.com/images/M/MV5BYTBmMDBhNWYtNTk4MS00NzBmLTk5ZWItM2ZlZjY4NTYxNWQzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="lilo and stitch">
+        <p>Poll: Movies About Letters</p>
+        <a href="#">Vote now</a>
+      </div>
+       <div class="carousel-item">
+        <img src=" https://m.media-amazon.com/images/M/MV5BM2U0MWRjZTMtMDVhNC00MzY4LTgwOTktZGQ2MDdiYTI4OWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="the brutalist">
+        <p>Poll: Movies About Letters</p>
+        <a href="#">Vote now</a>
+      </div>
+       <div class="carousel-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj7VMY4LYO2ss4HcCtsVcNbhuUXDWFE6WFDQ&s" alt="and just like that">
+        <p>Poll: Movies About Letters</p>
+        <a href="#">Vote now</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Related content area -->
+<div id="editor-picks-details" class="editor-details hidden">
+  <div id="staff-picks" class="content hidden">
+    <h3>Staff Picks: What to Watch in May</h3>
+    <ul>
+      <li>The Fall Guy</li>
+      <li>Challengers</li>
+      <li>Kingdom of the Planet of the Apes</li>
+    </ul>
+  </div>
+  <div id="new-on-max" class="content hidden">
+    <h3>Everything New on Max in May</h3>
+    <ul>
+      <li>Dune: Part Two</li>
+      <li>The Sympathizer</li>
+      <li>Young Sheldon Final Season</li>
+    </ul>
+  </div>
+  <div id="vote-poll" class="content hidden">
+    <h3>Poll: Movies About Letters</h3>
+    <p>Which of these classic films centered on letters is your favorite?</p>
+    <ul>
+      <li>You've Got Mail</li>
+      <li>The Letter</li>
+      <li>Dear John</li>
+    </ul>
+  </div>
+</div>
+
+  <div class="section-header">
+    <span>Born today</span>
+    <span class="arrow">&rsaquo;</span>
+  </div>
+  <div class="section-subtitle">People born on May 21</div>
+
+  <div class="scroll-row">
+    <div class="person">
+      <img src="https://media.them.us/photos/66154bf7635f61440c6b3761/1:1/w_1280,h_1280,c_limit/hannah-einbinder.jpg" alt="Hannah Einbinder">
+      <div class="person-name">Hannah Einbinder</div>
+      <div class="person-age">30</div>
+    </div>
+    <div class="person">
+      <img src="https://m.media-amazon.com/images/M/MV5BNzQzZDViNjgtOWNjYy00MmJjLTlhMWMtZjBkZDg4ODlmMjViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Chase Sui Wonders">
+      <div class="person-name">Chase Sui Wonders</div>
+      <div class="person-age">29</div>
+    </div>
+    <div class="person">
+      <img src="https://ntvb.tmsimg.com/assets/assets/68332_v9_bc.jpg?w=360&h=480" alt="Lisa Edelstein">
+      <div class="person-name">Lisa Edelstein</div>
+      <div class="person-age">59</div>
+    </div>
+    <div class="person">
+      <img src="https://m.media-amazon.com/images/M/MV5BMTQzMTcxMzcwN15BMl5BanBnXkFtZTYwNjIwMjc1._V1_.jpg" alt="Fairuza Balk">
+      <div class="person-name">Fairuza Balk</div>
+      <div class="person-age">51</div>
+    </div>
+    <div class="person">
+      <img src="https://ntvb.tmsimg.com/assets/assets/249472_v9_bc.jpg" alt="Sarah Ramos">
+      <div class="person-name">Sarah Ramos</div>
+      <div class="person-age">34</div>
+    </div>
+    <div class="person">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTmlziEquTi4S2qGHKQRZEi3-G2AL9HqCMbw&s" alt="Rachelle Goulding">
+      <div class="person-name">Rachelle Goulding</div>
+      <div class="person-age">39</div>
+    </div>
+  </div>
+  
+<div class="news-section scrollbar">
+    <div class="news-card">
+      <img src="https://ichef.bbci.co.uk/ace/standard/1920/cpsprodpb/af69/live/2c2189b0-35ba-11f0-96c3-cf669419a2b0.jpg" alt="George Wendt">
+      <div class="news-title">George Wendt, the Beer-Loving Norm on ‘Cheers,’ Dies at 77</div>
+      <div class="news-meta">May 21 · The Hollywood Reporter</div>
+    </div>
+    <div class="news-card">
+      <img src="https://m.economictimes.com/thumb/msid-116147260,width-1200,height-1200,resizemode-4,imgsize-97762/yellowjackets-season-3-heres-what-teaser-reveals-see-release-date-plot-and-cast.jpg" alt="Yellowjackets">
+      <div class="news-title">‘Yellowjackets’ Renewed for Season 4 Following Record-Setting Season 3</div>
+      <div class="news-meta">May 20 · The Wrap</div>
+    </div>
+    <div class="news-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Elle_Fanning-1733_%28cropped%29.jpg/1200px-Elle_Fanning-1733_%28cropped%29.jpg" alt="Elle Fanning">
+      <div class="news-title">Elle Fanning to Play Effie in Hunger Games: Sunrise</div>
+      <div class="news-meta">May 20 · The Hollywood Reporter</div>
+    </div>
+      </div>
+
+  <!-- Tags -->
+<div class="tags">
+  <a href="https://www.bbc.com/news" target="_blank" class="tag">Top news</a>
+  <a href="https://www.imdb.com/news/movie/" target="_blank" class="tag">Movie news</a>
+  <a href="https://www.imdb.com/news/tv/" target="_blank" class="tag">TV news</a>
+  <a href="https://www.tmz.com/" target="_blank" class="tag">Celebrity news</a>
+</div>
+
+
+  <!-- Recently Viewed -->
+  <div class="recently-viewed">
+    <div class="section-header">
+      <span>Recently viewed</span>
+      
+    </div>
+
+    <div class="recent-scroll scrollbar">
+      <div class="recent-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSwH8PiI39gDf-i6KkeJ7X-VjaEqvqW3rzpQ&s" alt="MobLand">
+        <div class="recent-title">MobLand</div>
+      </div>
+      <div class="recent-item">
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/82/Raid_2_poster.jpg" alt="Raid 2">
+        <div class="recent-title">Raid 2</div>
+      </div>
+      <div class="recent-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Luke_Kleintank_Midway_Premiere_%28cropped%29.jpg/330px-Luke_Kleintank_Midway_Premiere_%28cropped%29.jpg" alt="Luke Kleintank">
+        <div class="recent-title">Luke Kleintank</div>
+      </div>
+      <div class="recent-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIcakeIOPOcu7HlvAg5Q1o1T3mrCW004UiLg&s" alt="Priscilla Pointer">
+        <div class="recent-title">Priscilla Pointer</div>
+      </div>
+      <div class="recent-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDtVq6YEWIlPO0tskCtxVsTQjTxRAfU5Kr6w&s" alt="The Poll Diaries">
+        <div class="recent-title">The Poll Diaries</div>
+      </div>
+      <div class="recent-item">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ab/Final_Destination_Bloodlines_%282025%29_poster.jpg/250px-Final_Destination_Bloodlines_%282025%29_poster.jpg" alt="Final Destination">
+        <div class="recent-title">Final Destination: Bloodlines</div>
+      </div>
+       <div class="recent-item">
+        <img src="https://m.media-amazon.com/images/M/MV5BYTBmMDBhNWYtNTk4MS00NzBmLTk5ZWItM2ZlZjY4NTYxNWQzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="lilo and stitch">
+        <div class="recent-title">lilo and stitch</div>
+      </div>
+       <div class="recent-item">
+        <img src="https://m.media-amazon.com/images/M/MV5BMWIzM2YyNGEtOTc3MS00YmM5LWIzMzEtZWEyYTA2MWI5ZGJhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="and just like that">
+        <div class="recent-title">AND just like that</div>
+      </div>
+       <div class="recent-item">
+        <img src="https://m.media-amazon.com/images/M/MV5BM2U0MWRjZTMtMDVhNC00MzY4LTgwOTktZGQ2MDdiYTI4OWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="the brutalist">
+        <div class="recent-title"></div>the brutalist
+      </div>
+    </div>
+  </div>
+
+ <footer class="footer">
+ <button class="sign-in" onclick="redirectToSignIn()">Sign in for more access</button>
+
+ <div class="footer-content">
+  <div class="social-section">
+    <h3>Follow IMDb on social</h3>
+    <div class="icons">
+      <a href="https://www.tiktok.com/@imdb" target="_blank" rel="noopener noreferrer" aria-label="IMDb TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.instagram.com/imdb/" target="_blank" rel="noopener noreferrer" aria-label="IMDb Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com/IMDb" target="_blank" rel="noopener noreferrer" aria-label="IMDb Twitter">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+      <a href="https://www.youtube.com/user/imdb" target="_blank" rel="noopener noreferrer" aria-label="IMDb YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/imdb" target="_blank" rel="noopener noreferrer" aria-label="IMDb Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+    <div class="app-section">
+      <h3>Get the IMDb app</h3>
+      <p>For Android and iOS</p>
+      <img src="https://i0.wp.com/phandroid.com/wp-content/uploads/2010/06/imdb-qr-code.png?resize=342%2C342" alt="QR Code" class="qr-code">
+    </div>
+  </div>
+
+  <div class="links">
+  <a href="https://help.imdb.com/imdb" target="_blank" rel="noopener noreferrer">Help</a>
+  <a href="https://www.imdb.com/siteindex/" target="_blank" rel="noopener noreferrer">Site Index</a>
+  <a href="https://pro.imdb.com/" target="_blank" rel="noopener noreferrer">IMDbPro</a>
+  <a href="https://www.boxofficemojo.com/" target="_blank" rel="noopener noreferrer">Box Office Mojo</a>
+  <a href="https://developer.imdb.com/" target="_blank" rel="noopener noreferrer">License IMDb Data</a>
+  <a href="https://www.imdb.com/pressroom/" target="_blank" rel="noopener noreferrer">Press Room</a>
+  <a href="https://advertising.amazon.com/" target="_blank" rel="noopener noreferrer">Advertising</a>
+  <a href="https://www.amazon.jobs/en/" target="_blank" rel="noopener noreferrer">Jobs</a>
+  <a href="https://www.imdb.com/conditions" target="_blank" rel="noopener noreferrer">Conditions of Use</a>
+  <a href="https://www.imdb.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+  <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer">Your Ads Privacy Choices</a>
+</div>
+
+  <div class="copyright">
+    <p>an <span class="amazon">amazon</span> company</p>
+    <p>© 1990–2025 by IMDb.com, Inc.</p>
+  </div>
+</footer>
+
+
+
+
+ <script>
+  function createAccount() {
+      // Simulate account creation
+      document.getElementById("message").textContent = "Account has been successfully created!";
+    }
+  
+  // Browse Trailers Toggle
+const browseLink = document.getElementById('browse-link');
+const trailerPanel = document.getElementById('trailer-panel');
+
+browseLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  trailerPanel.classList.toggle('active');
+});
+
+// Search Functionality
+document.getElementById("search-btn").addEventListener("click", function () {
+  const query = document.getElementById("search-input").value.trim();
+  if (query) {
+    window.location.href = `https://www.imdb.com/find?q=${encodeURIComponent(query)}`;
+  }
+});
+
+document.getElementById("search-input").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    document.getElementById("search-btn").click();
+  }
+});
+
+// Open External Site
+function openSite(url) {
+  window.open(url, '_blank');
+}
+
+// Toggle UI Boxes
+function hideAll() {
+  document.getElementById('imdbpro-box').style.display = 'none';
+  document.getElementById('watchlist-box').style.display = 'none';
+  document.getElementById('sign-in-box').style.display = 'none';
+  document.getElementById('create-account-form').style.display = 'none';
+  document.getElementById('menu-box').style.display = 'none';
+}
+
+function toggleBox(id) {
+  const box = document.getElementById(id);
+  if (box.style.display === 'block') {
+    box.style.display = 'none';
+  } else {
+    hideAll();
+    box.style.display = 'block';
+  }
+}
+
+document.getElementById('imdbpro-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  toggleBox('imdbpro-box');
+});
+
+document.getElementById('watchlist-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  toggleBox('watchlist-box');
+});
+
+document.getElementById('sign-in-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  toggleBox('sign-in-box');
+});
+
+document.getElementById('create-account-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  hideAll();
+  document.getElementById('create-account-form').style.display = 'block';
+});
+
+document.getElementById('menu-toggle').addEventListener('click', function(e) {
+  e.preventDefault();
+  toggleBox('menu-box');
+});
+
+window.addEventListener('click', function(e) {
+  const boxes = ['imdbpro-box', 'watchlist-box', 'sign-in-box', 'create-account-form', 'menu-box'];
+  if (!e.target.closest('.top-bar') && !boxes.some(id => {
+    const el = document.getElementById(id);
+    return el.style.display === 'block' && el.contains(e.target);
+  })) {
+    hideAll();
+  }
+});
+
+// Trailer Modal Logic
+const trailerButtons = document.querySelectorAll('.btn-trailer, .trailer');
+const modal = document.getElementById('trailerModal') || document.getElementById('video-modal');
+const trailerVideo = document.getElementById('trailerVideo') || document.getElementById('video-player');
+const closeBtn = document.querySelector('.close-btn');
+
+trailerButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const videoUrl = button.getAttribute('data-video');
+    const embedUrl = videoUrl.replace("watch?v=", "embed/").replace("youtu.be/", "www.youtube.com/embed/");
+    trailerVideo.src = embedUrl + "?autoplay=1";
+    modal.style.display = "block";
+  });
+});
+
+if (closeBtn) {
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+    trailerVideo.src = "";
+  };
+}
+
+window.onclick = event => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+    trailerVideo.src = "";
+  }
+};
+
+// Carousel Scroll
+function scrollCarousel(direction) {
+  const carousel = document.querySelector(".carousel");
+  const scrollAmount = 200;
+  carousel.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth",
+  });
+}
+
+// Editor Picks Toggle
+document.querySelectorAll('.carousel-item a').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelectorAll('.editor-details .content').forEach(block => {
+      block.classList.add('hidden');
+    });
+
+    document.getElementById('editor-picks-details').classList.remove('hidden');
+
+    if (this.textContent.includes('our picks')) {
+      document.getElementById('staff-picks').classList.remove('hidden');
+    } else if (this.textContent.includes('list')) {
+      document.getElementById('new-on-max').classList.remove('hidden');
+    } else if (this.textContent.includes('Vote')) {
+      document.getElementById('vote-poll').classList.remove('hidden');
+    }
+  });
+});
+
+// Box Toggle Button
+const box = document.getElementById('box');
+const btn = document.getElementById('toggleBtn');
+
+btn.addEventListener('click', () => {
+  if (box.style.display === 'none') {
+    box.style.display = 'flex';
+    btn.textContent = 'Hide Box';
+  } else {
+    box.style.display = 'none';
+    btn.textContent = 'Show Box';
+  }
+});
+
+// Redirect to Sign In
+function redirectToSignIn() {
+  window.location.href = "https://www.imdb.com/registration/signin";
+}
+
+// Utility - Close trailer modal if defined
+function closeModal() {
+  if (modal) {
+    modal.style.display = 'none';
+    if (trailerVideo) trailerVideo.src = '';
+  }
+}
+
+  // Function to open the modal and play the video
+  document.querySelectorAll('.trailer').forEach(button => {
+    button.addEventListener('click', function () {
+      const videoUrl = this.getAttribute('data-video');
+      const embedUrl = convertToEmbedUrl(videoUrl) + "?autoplay=1";
+      const iframe = document.getElementById('video-player');
+      iframe.src = embedUrl;
+      document.getElementById('video-modal').style.display = 'block';
+    });
+  });
+
+  // Function to close the modal and stop the video
+  // Function to close the modal and stop the video
+  // Function to close the modal and stop the video
+  // Function to close the modal and stop the video
+  // Function to close the modal and stop the video
+  // Function to close the modal and stop the video
+  // Function to open the modal and play the video
+  document.querySelectorAll('.trailer').forEach(button => {
+    button.addEventListener('click', function () {
+      const videoUrl = this.getAttribute('data-video');
+      const embedUrl = convertToEmbedUrl(videoUrl) + "?autoplay=1";
+      const iframe = document.getElementById('video-player');
+      iframe.src = embedUrl;
+      document.getElementById('video-modal').style.display = 'block';
+    });
+  });
+
+  // Function to close the modal and stop the video
+  function closeModal() {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-player');
+    iframe.src = '';
+    modal.style.display = 'none';
+  }
+
+  // Convert normal YouTube link to embeddable link
+  function convertToEmbedUrl(url) {
+    const videoIdMatch = url.match(/(?:youtu\.be\/|youtube\.com\/.*v=)([^&]+)/);
+    return videoIdMatch ? `https://www.youtube.com/embed/${videoIdMatch[1]}` : url;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* Basic Reset */
+body, h1, h2, p, ul, li, select, input, button, a, div, span, img, video, aside, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: #000; /* Updated background */
+  color: #fff; /* White text for dark background */
+}
+
+nav {
+  background-color: #111;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+nav .category,
+nav input[type="text"],
+nav .nav-right {
+  margin-right: 15px;
+}
+
+nav .category,
+nav .lang-select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #222;
+  color: #fff;
+}
+
+nav input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #222;
+  color: #fff;
+}
+
+nav input[type="text"]::placeholder {
+  color: #888;
+}
+
+nav .nav-right a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+nav .nav-right a:hover {
+  color: #fff;
+}
+
+.section-header h1 {
+  color: #ffc107;
+  padding: 20px;
+}
+
+.up-next,
+.popular-celebrities,
+.trailer-item,
+.footer-box,
+.box-office-row,
+.movie-card {
+  background-color: #111; /* Updated to dark card background */
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+.up-next h2,
+.popular-celebrities h2,
+.trailer-info h3,
+.footer-box h4 {
+  color: #ffc107;
+}
+
+.video-info strong,
+.video-info p,
+.trailer-info p,
+.footer-box p {
+  color: #ccc;
+}
+
+.browse-link,
+.trailer-info a {
+  color: #00bfff;
+}
+
+.browse-link:hover,
+.trailer-info a:hover {
+  text-decoration: underline;
+}
+
+.celeb-categories span {
+  background-color: #333;
+  color: #fff;
+}
+
+.movie-card img {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-info .rating {
+  color: #ffc107;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.movie-info h3 {
+  color: #fff;
+}
+
+.movie-info .btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;                                   
+  cursor: pointer;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.movie-info .btn.trailer {
+  background-color: #6c757d;
+}
+
+.box-office-item .rank,
+.box-office-item .movie-title,
+.box-office-item .gross {
+  color: #ccc;
+}
+
+.rank,
+.rank-change {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.rank-change.up {
+  color: #4caf50;
+}
+
+.trailer-item video {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.qr-code {
+  width: 80px;
+  height: 80px;
+}
+
+.carousel-section {
+  padding: 20px;
+}
+
+.carousel-section h2,
+.carousel-section p {
+  color: #ffc107;
+}
+
+.scroll-btn {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+.carousel-item img {
+  width: 200px;     /* Reduce as needed */
+  height: auto;     /* Maintains aspect ratio */
+  border-radius: 10px;
+  object-fit: cover;
+}
+.movie-card img {
+  width: 300px; /* Increase width as desired (e.g. 200px or more) */
+  height: 300px; /* Keep aspect ratio or adjust height proportionally */
+  object-fit: cover; /* Ensure image fills area without distortion */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.movie-card img:hover {
+  transform: scale(1.05); /* Optional: zoom effect on hover */
+}

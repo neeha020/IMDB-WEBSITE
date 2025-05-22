@@ -1,0 +1,153 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.fan-favorites {
+  max-width: 100%;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.yellow-bar {
+  width: 5px;
+  height: 24px;
+  background-color: #facc15;
+  border-radius: 2px;
+}
+
+.title-bar h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.arrow {
+  color: #fff;
+  font-size: 18px;
+}
+
+.section-header p {
+  margin: 5px 0 0 15px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.card {
+  width: 220px;
+  margin: 10px;
+  display: inline-block;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.card-image img {
+  width: 300%;
+}
+
+.card-bottom {
+  padding: 10px;
+}
+
+.rating-title {
+  margin-bottom: 5px;
+}
+
+.star, .outline {
+  color: gold;
+}
+
+.btn {
+  padding: 5px 10px;
+  margin: 5px 2px 0 0;
+  border: none;
+  background: #e50914;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #f40612;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 300%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  position: relative;
+}
+
+.close-btn {
+  color: #fff;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+iframe {
+  border-radius: 10px;
+}
